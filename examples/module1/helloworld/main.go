@@ -3,6 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
+	"net/http"
 	"os"
 )
 
@@ -26,4 +28,10 @@ func main() {
 	// 		fmt.Println(word)
 	// 	}()
 	// }
+
+	res, err := http.Get("https://www.google.co.uk")
+	defer res.Body.Close()
+	if err != nil {
+		log.Fatal(err)
+	}
 }
