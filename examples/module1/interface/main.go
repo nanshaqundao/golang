@@ -37,15 +37,23 @@ func main() {
 	h.firstName = "first"
 	h.lastName = "last"
 	interfaces = append(interfaces, h)
+
+	//var huma1 IF
+	//huma1 = new(Human)
+	//
 	c := new(Car)
 	c.factory = "benz"
 	c.model = "s"
 	interfaces = append(interfaces, c)
-	for _, f := range interfaces {
-		fmt.Println(f.getName())
-	}
+
 	p := Plane{}
 	p.vendor = "testVendor"
 	p.model = "testModel"
+	interfaces = append(interfaces, p)
 	fmt.Println(p.getName())
+
+
+	for _, f := range interfaces {
+		fmt.Println(f.getName())
+	}
 }
